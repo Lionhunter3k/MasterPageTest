@@ -2,7 +2,6 @@
     x:Class="MasterPageTest.MasterPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:MasterPageTest"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -12,10 +11,12 @@
     		<RowDefinition Height="43*"/>
     		<RowDefinition Height="213*"/>
     	</Grid.RowDefinitions>
-    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="MasterPageTest Application" VerticalAlignment="Center" FontSize="48" Margin="100,0,0,0"/>
-    	<TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock1" VerticalAlignment="Top" FontSize="18.667"/>
-    	<Frame x:Name="ContentFrame" Content="Frame" Grid.Row="1" Margin="100"/>
-    	<StackPanel Margin="0,0,100,0" Orientation="Horizontal" HorizontalAlignment="Right">
+    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Master!" VerticalAlignment="Center" FontSize="48" Margin="100,0,0,0"/>
+    	<TextBox HorizontalAlignment="Center" x:Name="search" TextWrapping="Wrap" Text="TextBlock1" VerticalAlignment="Center" FontSize="18.667" Width="200"/>
+    	
+        <Frame x:Name="ContentFrame" Content="Frame" Grid.Row="1" Margin="100"/>
+    	
+        <StackPanel Margin="0,0,100,0" Orientation="Horizontal" HorizontalAlignment="Right">
     		<Button Content="MainPage" Click="ButtonBase_OnClick1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="80" Margin="0"/>
     		<Button Content="Second Page" Click="ButtonBase_OnClick2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="80" Margin="0"/>
     		<Button Content="Logout" Click="ButtonBase_OnClick3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="80" Margin="0"/>

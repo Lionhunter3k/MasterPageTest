@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml;
+﻿using System;
+using Windows.UI.Xaml;
 
 namespace MasterPageTest
 {
@@ -7,19 +8,23 @@ namespace MasterPageTest
         public MasterPage()
         {
             InitializeComponent();
+            Loaded += delegate
+            {
+                search.Text = DateTime.Now.Millisecond + "";
+            };
         }
 
         private void ButtonBase_OnClick1(object sender, RoutedEventArgs e)
         {
-            NavigateService.Instance.NavigateToMainPage();
+            NavigateService.Instance.Navigate(typeof(MainPage), typeof(MasterPage));
         }
         private void ButtonBase_OnClick2(object sender, RoutedEventArgs e)
         {
-            NavigateService.Instance.NavigateToSecondPage();
+            NavigateService.Instance.Navigate(typeof(SecondPage), typeof(MasterPage));
         }
         private void ButtonBase_OnClick3(object sender, RoutedEventArgs e)
         {
-            NavigateService.Instance.NavigateToLoginPage();
+            NavigateService.Instance.Navigate(typeof(LoginPage));
         }
     }
 }

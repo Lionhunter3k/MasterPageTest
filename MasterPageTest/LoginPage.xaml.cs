@@ -5,12 +5,12 @@ namespace MasterPageTest
     {
         public LoginPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigateService.Instance.NavigateToMainPage();
+            NavigateService.Instance.Navigate(typeof(MainPage), typeof(MasterPage));
         }
     }
 }

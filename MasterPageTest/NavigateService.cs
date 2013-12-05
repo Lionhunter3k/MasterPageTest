@@ -10,24 +10,14 @@ namespace MasterPageTest
 
         public Frame Frame { get; set; }
 
-        public void NavigateToLoginPage()
+        public void Navigate(Type pageType)
         {
-            Frame.Navigate(typeof(LoginPage));
-        }
-
-        public void NavigateToMainPage()
-        {
-            Navigate(typeof(MainPage), typeof(MasterPage));
-        }
-
-        public void NavigateToSecondPage()
-        {
-            Navigate(typeof(SecondPage), typeof(MasterPage));
+            Frame.Navigate(pageType);
         }
 
         public void Navigate(Type pageType, Type masterPageType)
         {
-            Page masterPage = Frame.Content as Page;
+            var masterPage = Frame.Content as Page;
             if (masterPage != null && masterPage.GetType() != masterPageType)
             {
                 Frame.Navigate(masterPageType);
